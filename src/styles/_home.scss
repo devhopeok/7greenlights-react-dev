@@ -1,0 +1,155 @@
+.home-container {
+  @extend %flex-column;
+}
+
+.top-banner-container {
+  height: 36rem;
+
+  &.reduced {
+    height: 20rem;
+  }
+}
+
+.search-bar {
+  @extend %flex-centered;
+  background-color: $search-bg;
+
+  input {
+    color: $black-color;
+    display: flex;
+    flex: 1;
+    font-size: 2.4em;
+    font-weight: lighter;
+    padding-left: 1.5rem;
+  }
+
+  img {
+    height: 2.1rem;
+    margin-right: 1.5rem;
+  }
+
+  @media (max-width: $screen-xsm-max) {
+    width: 33rem;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 5rem;
+  }
+}
+
+.top-banner {
+  @extend %flex-column-centered;
+  height: 36rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .search-bar {
+    height: 4.5rem;
+    width: 42rem;
+  }
+
+  &.reduced {
+    height: 20rem;
+  }
+
+  .blast-banner {
+    display: none;
+    margin-bottom: 6rem;
+
+    @media (max-width: $screen-sm-max) {
+      display: flex;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.dark-bg {
+  background-color: $bg-color;
+  height: 100%;
+  mix-blend-mode: multiply;
+  width: 100%;
+
+  &.blend-normal {
+    mix-blend-mode: normal;
+  }
+}
+
+// Logo Box
+.logo-box {
+  justify-content: space-between;
+  margin: 0 0 3.5rem;
+  text-align: center;
+}
+
+.motto {
+  color: $soft-green-color;
+  font-size: 2em;
+  font-weight: 100;
+  letter-spacing: .1rem;
+}
+
+.connect-button {
+  background-color: $transparent-color;
+  border: .1rem solid $white-color;
+  color: $white-color;
+  font-size: 1.6em;
+  padding: 1.5rem 2rem;
+}
+
+// Signup Box
+.signup-box {
+  @extend %flex-column-centered;
+
+  .connect-buttons-box {
+    display: flex;
+  }
+
+  .instagram-connect-button {
+    margin-left: 20px;
+  }
+
+  .manual-signup {
+    color: $white-color;
+    font-size: 2em;
+    font-weight: lighter;
+    letter-spacing: .1rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+
+    a {
+      font-weight: normal;
+    }
+  }
+
+  .small-right-space {
+    margin: 0 1rem 0 0;
+  }
+
+  .icon-size {
+    height: 1.8rem;
+    margin-bottom: -.3rem;
+    width: auto;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    .connect-buttons-box {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .instagram-connect-button {
+      margin: 1rem 0 0;
+    }
+
+    .logo-box .main-logo {
+      height: 10rem;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .logo-box .main-logo {
+    height: 10rem;
+  }
+}

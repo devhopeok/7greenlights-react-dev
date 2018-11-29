@@ -1,0 +1,337 @@
+.arena-cover-container {
+  @extend %flex-column;
+  background-size: cover;
+  height: 40rem;
+  justify-content: space-between;
+  padding: 12rem 5rem 0;
+  position: relative;
+
+  @media (max-width: $screen-xs-max) {
+    padding: 12rem 2rem 0;
+  }
+
+  .description {
+    color: $soft-grey-color;
+    font-size: 1.8em;
+    font-weight: 100;
+    margin-top: 2rem;
+    max-width: 30rem;
+  }
+
+  .arena-top-bar {
+    align-items: center;
+    display: flex;
+
+    h1 {
+      color: $white-color;
+      font-size: 3em;
+      margin: 0 2rem 0 0;
+    }
+
+    .divider-line {
+      background-color: $white-color;
+      height: 2rem;
+      margin: 0 2rem;
+      width: .2rem;
+    }
+
+    .share-button {
+      background-image: url('../components/Media/img/share-icon.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      height: 2.3rem;
+      width: 2.3rem;
+    }
+
+  }
+
+  .arena-blast-container {
+    display: flex;
+    margin-top: 2rem;
+
+    label {
+      color: $blast-green-color;
+      font-size: 2em;
+      margin-left: 2rem;
+    }
+  }
+
+  .arena-hashtag {
+    color: $soft-grey-color;
+    font-size: 1.8em;
+    margin-top: 1rem;
+  }
+
+  .divider-line {
+    background-color: $white-color;
+    height: .1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
+
+.arena-sponsors {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+
+  a {
+    margin-right: 2rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  img {
+    box-shadow: 0 .2rem .4rem 0 $half-black;
+    height: 7.7rem;
+    width: 14rem;
+  }
+}
+
+.arena-stats-container {
+  @extend %flex-centered;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  @media (max-width: $screen-sm-min) {
+    display: block;
+    width: 100%;
+  }
+
+  .arena-stats { @extend %flex-centered; }
+
+  .arena-stat {
+    @extend %flex-column-centered;
+    margin-left: 2rem;
+    max-width: 8rem;
+
+    @media (max-width: $screen-sm-min) {
+      &:first-of-type { margin-left: 0; }
+    }
+
+    .stat-title {
+      font-size: 1.33em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .stat {
+      font-size: 3.1em;
+    }
+  }
+}
+
+.arena-media-container {
+  @extend %flex-column-centered;
+  margin: 0 auto;
+  max-width: 90rem;
+
+  @media (max-width: $screen-md-max) {
+    display: block;
+    max-width: 100%;
+  }
+
+  .arena-controls {
+    align-items: flex-start;
+    display: flex;
+    width: 100%;
+
+    @media (max-width: $screen-md-max) {
+      margin-left: 2rem;
+      width: auto;
+    }
+  }
+}
+
+.arena-info-ontop {
+  position: relative;
+  z-index: 1;
+}
+
+.post-media {
+  width: 13.8rem;
+}
+
+.post-arena-overlay {
+  background-color: $transparent-color;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.post-arena-popup {
+  background-color: $post-arena-bg;
+  height: 55rem;
+  left: 50%;
+  outline: none;
+  padding: 0;
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 49rem;
+  z-index: 3;
+
+  @media (max-width: $screen-xs-max) {
+    width: 75vw;
+  }
+}
+
+.post-arena-container {
+  @extend %flex-column-centered;
+  height: 100%;
+}
+
+
+.post-arena-header {
+  @extend %flex-column;
+  height: 15.1rem;
+  width: 100%;
+
+  .close-button {
+    align-self: flex-end;
+    margin: 2rem;
+  }
+
+  .title {
+    @extend %flex-centered;
+    width: 100%;
+
+    h1 {
+      color: $dark-blue-color;
+      display: inline;
+      font-size: 2.1em;
+
+      @media (max-width: $screen-xs-max) {
+        font-size: 1.5rem;
+        padding-left: 2rem;
+      }
+    }
+
+    a {
+      color: $dark-blue-color;
+      font-size: 2.1em;
+      font-weight: 600;
+      text-decoration: underline;
+
+      @media (max-width: $screen-xs-max) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .search-sort {
+    @extend %flex-centered;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0 4rem;
+  }
+}
+
+.media-form-container {
+  @extend %flex-column;
+  background-color: $post-list-bg;
+  flex: 1;
+  width: 100%;
+
+  form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+}
+
+.post-media-list {
+  @extend %flex-column-centered;
+  flex: 1;
+  justify-content: flex-start;
+  overflow: auto;
+
+  h2 {
+    color: $dark-blue-color;
+    font-size: 2em;
+    font-weight: 400;
+  }
+}
+
+.list-item-container {
+  @extend %flex-column-centered;
+  min-height: 10rem;
+  width: 100%;
+
+  .divider-line {
+    align-self: flex-start;
+    background-color: rgba($post-divider-bg, .8);
+    height: .1rem;
+    width: calc(100% - 3rem);
+  }
+}
+
+.media-list-item {
+  @extend %flex-centered;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+
+  .media-item-img {
+    height: 7rem;
+    margin-left: 2rem;
+    object-fit: cover;
+    width: 7rem;
+  }
+
+  .media-info {
+    @extend %flex-column;
+    align-items: flex-start;
+    flex: 1;
+
+    .media-name {
+      color: $dark-blue-color;
+      font-size: 1.8em;
+      padding-left: 1rem;
+    }
+  }
+
+  .checkbox {
+    margin-right: 3rem;
+  }
+}
+
+.post-button-container {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  .post-media {
+    margin-right: 4rem;
+  }
+}
+
+.arena-cover-gradient {
+  @include transparent-middle-gradient($black-color, $bottom-gradient);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &.greenlit {
+    @include transparent-middle-gradient($top-gradient-greenlit, $bottom-gradient);
+  }
+}
+
+.arena-cover-overlay {
+  @include horizontal-gradient($black-color, transparent);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

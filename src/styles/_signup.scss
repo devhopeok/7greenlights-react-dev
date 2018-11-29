@@ -1,0 +1,32 @@
+.signup-container {
+  @extend %flex-column-centered;
+  background-position: center;
+  color: $white-color;
+
+  @media (max-width: $screen-xsm-max) { padding-top: 10rem; }
+
+  .form-container {
+    max-width: 400px;
+    min-width: 310px;
+    width: 30%;
+  }
+}
+
+.agreement-notice {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  margin-top: 2rem;
+
+  button {
+    margin-right: 1rem;
+  }
+
+  span {
+    font-size: 1.3em;
+  }
+}
+
+.dob-fields-container {
+  @extend %flex-centered;
+}

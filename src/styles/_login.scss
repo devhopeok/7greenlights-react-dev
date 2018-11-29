@@ -1,0 +1,81 @@
+.login-container {
+  @extend %flex-column-centered;
+
+  .login-error {
+    font-size: 1.3em;
+    padding: 0 0 15px;
+  }
+}
+
+.login-overlay {
+  background-color: $transparent-color;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.login-bubble {
+  background-color: $soft-grey-color;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  right: 2.5rem;
+  top: 6.5rem;
+  width: 30rem;
+
+  @media (max-width: $screen-md-max) {
+    max-width: 80vw;
+  }
+
+  .form-container {
+    margin: 1rem auto 0;
+    width: 90%;
+  }
+
+  input {
+    color: $dark-blue-color;
+  }
+}
+
+.login-bubble::after {
+  border-color: $soft-grey-color $transparent-color;
+  border-style: solid;
+  border-width: 0 1.1rem 1rem;
+  content: '';
+  display: block;
+  left: 90%;
+  position: absolute;
+  top: -1rem;
+  width: 0;
+  z-index: 1;
+}
+
+.text-login-modal {
+  color: $dark-blue-color;
+  font-size: 1.3em;
+  font-weight: 600;
+  padding: 1.8rem .9rem 1.7rem;
+  text-align: center;
+
+  &.message {
+    bottom: 8rem;
+    font-style: italic;
+    left: 5.4rem;
+    position: absolute;
+  }
+}
+
+.link-login-modal {
+  align-self: center;
+  color: $dark-blue-color;
+  cursor: pointer;
+  font-size: 1.4em;
+  padding: .8rem 0 1.7rem;
+  text-decoration: underline;
+}
+
+.forgot-password-container {
+  margin: 1rem auto 0;
+}

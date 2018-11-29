@@ -1,0 +1,213 @@
+// Media queries breaking points
+$screen-xsm-min: 480px;
+$screen-xsm-max: ($screen-xsm-min - 1);
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
+
+//Other
+$top-bar-height: 5rem;
+$top-bar-height-md: 15rem;
+$top-bar-height-sm: 25rem;
+
+//Colors
+$dark-color: #222;
+$white-color: #fff;
+$black-color: #000;
+$grey-color: #d1d2d4;
+$field-bg-grey: rgb(215, 215, 215);
+$soft-grey-color: #e3e7f0;
+$dark-blue-color: #1d2535;
+$soft-green-color: #93bb6a;
+$lighter-black: rgb(17, 22, 32);
+$post-arena-bg: #e3e8f1;
+$post-list-bg: #e9ecf2;
+$post-divider-bg: #979797;
+$transparent-color: transparent;
+$half-black: rgba($black-color, .5);
+$gradient-start: rgba($lighter-black, .8);
+$field-bg-color: rgba($field-bg-grey, .9);
+$top-gradient-greenlit: rgba(0, 222, 82, .3);
+$bottom-gradient: rgba(14, 19, 28, 1);
+$bg-color: rgba(21, 27, 38, .45);
+$search-bg: #d8d8d8;
+$translucid-blast-bg: rgba(227, 231, 240, .03);
+$red-error-color: #be3243;
+$blast-green-color: #00de53;
+$tooltip-grey: #b0c3cb;
+$highlighted-media-color: #212836;
+
+%flex-centered {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-column-centered {
+  @extend %flex-column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 2.3em;
+  font-weight: normal;
+  margin: 5px;
+}
+
+h3 {
+  margin: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited,
+a:-webkit-any-link {
+  color: inherit;
+}
+
+.strong {
+  font-weight: 500;
+}
+
+.standard-label {
+  color: $white-color;
+  font-size: 1.6em;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.modal-overlay {
+  background-color: $transparent-color;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 200;
+
+  &.dark {
+    background-color: rgba($black-color, .5);
+  }
+}
+
+.full-page {
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+.outerspace-bg {
+  $bg-color: #1a1e2a;
+  background-color: $bg-color;
+  background-image: url('../components/App/img/space.png');
+  background-position: top;
+  background-size: 100%;
+
+  @media (max-width: $screen-sm-max) {
+    background-image: url('../components/App/img/992-space.png');
+  }
+
+  @media (max-width: $screen-xs-max) {
+    background-image: url('../components/App/img/768-space.png');
+  }
+
+  @media (max-width: $screen-xsm-max) {
+    background-image: url('../components/App/img/480-space.png');
+  }
+}
+
+.aurora-bg {
+  $bg-color: #131721;
+  background-color: $bg-color;
+  background-image: url('../components/App/img/aurora.png');
+  background-position: top;
+  background-size: 100%;
+
+  @media (max-width: $screen-sm-max) {
+    background-image: url('../components/App/img/992-aurora.png');
+  }
+
+  @media (max-width: $screen-xs-max) {
+    background-image: url('../components/App/img/768-aurora.png');
+  }
+
+  @media (max-width: $screen-xsm-max) {
+    background-image: url('../components/App/img/480-aurora.png');
+  }
+}
+
+.transparent-button {
+  border: solid 1px $soft-grey-color;
+  color: $soft-grey-color;
+  font-size: 1.5em;
+  padding: 0 1rem;
+}
+
+$primary-color: $white-color;
+@import '~loaders.css/src/animations/ball-scale-multiple';
+
+.loader-hidden {
+  display: none;
+}
+
+.loader-active {
+  display: block;
+}
+
+.message-modal {
+  background-color: $soft-grey-color;
+  left: 50%;
+  outline: none;
+  padding: 2rem 2rem 3rem;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 300;
+
+  @media (max-width: $screen-md-max) {
+    max-width: 80vw;
+  }
+
+  .message-container {
+    @extend %flex-column-centered;
+  }
+
+  &.loading {
+    background-color: $transparent-color;
+  }
+
+  button {
+    align-self: flex-end;
+  }
+
+  h1 {
+    font-size: 2.53em;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+
+  p {
+    font-size: 2.23em;
+    margin: 0 6rem;
+  }
+
+  .divider-line {
+    background-color: $dark-blue-color;
+    height: .2rem;
+    margin-top: 2rem;
+    width: 5rem;
+  }
+}

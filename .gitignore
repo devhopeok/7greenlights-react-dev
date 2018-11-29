@@ -1,0 +1,22 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# production
+public/*
+!public/index.html
+!public/favicon.ico
+!public/favicon-16x16.png
+!public/favicon-32x32.png
+
+# misc
+.DS_Store
+.env
+npm-debug.log
+
+#credentials file
+credentials-*

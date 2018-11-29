@@ -1,0 +1,176 @@
+$white-60: rgba(255, 255, 255, .8);
+
+.mynotes-container {
+  @extend %flex-column-centered;
+
+  margin: 0 auto;
+  padding-top: 10rem;
+  width: 120rem;
+
+  @media (max-width: $screen-md-max) {
+    padding: 10rem 2rem;
+    width: calc(100% - 4rem);
+  }
+}
+
+.top-section {
+  width: 100%;
+}
+
+.featured-notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 5rem;
+  width: 100%;
+
+  @media (max-width: $screen-md-max) { justify-content: flex-start; }
+  @media (max-width: $screen-xsm-max) { justify-content: space-between; }
+
+  .note {
+    background-position: center center;
+    background-size: cover;
+    border: $white-60 .1rem dashed;
+    height: 16rem;
+    margin-bottom: 2rem;
+    text-align: right;
+    width: 15rem;
+
+    @media (max-width: $screen-lg-min) { margin-right: 2rem; }
+    @media (max-width: $screen-xsm-max) { margin-right: 0; }
+
+    .remove-icon {
+      color: $white-60;
+      display: inline-block;
+      font-size: 1.5em;
+      font-weight: 100;
+      margin-right: .5rem;
+      margin-top: .5rem;
+    }
+  }
+}
+
+.notes-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  width: 100%;
+
+  .back-media {
+    color: $soft-grey-color;
+    font-size: 1.26em;
+    text-decoration: underline;
+  }
+}
+
+.user-notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .note {
+    background-position: center center;
+    background-size: cover;
+    height: 13rem;
+    margin: .1rem .1rem 2rem;
+    position: relative;
+    text-align: right;
+    width: 12rem;
+
+    .greenlight-container {
+      bottom: 1rem;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .dummy {
+    height: 0;
+    width: 12rem;
+  }
+
+  .no-notes {
+    color: $soft-grey-color;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.note-overlay {
+  @include background-gradient($transparent-color, $black-color);
+  height: 100%;
+  width: 100%;
+}
+
+.note-modal {
+  @extend %flex-column-centered;
+  background-color: $soft-grey-color;
+  left: 50%;
+  outline: none;
+  padding: 1rem 1rem 4rem;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 61.6rem;
+
+  @media (max-width: $screen-sm-max) {
+    max-width: 80vw;
+  }
+
+  h1 {
+    font-size: 3em;
+    font-weight: 600;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+  }
+
+
+  .slider-container {
+    @extend %flex-centered;
+    width: 100%;
+
+    .note-image {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 41.3rem;
+      margin: 0 3rem;
+      width: 41.3rem;
+    }
+
+    .dark-gradient {
+      @include background-gradient($black-color, $transparent-color);
+      background-color: transparent;
+      height: 50%;
+      width: 100%;
+    }
+
+    .right-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .uploaded-by {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin: 2rem 0 0;
+
+    u {
+      font-weight: 600;
+      margin-left: .5rem;
+    }
+  }
+
+  .close-button {
+    align-self: flex-end;
+    margin: 2rem 2rem 0 0;
+  }
+}

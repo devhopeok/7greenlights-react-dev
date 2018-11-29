@@ -1,0 +1,63 @@
+.share-modal {
+  @extend %flex-column-centered;
+  background-color: $soft-grey-color;
+  left: 50%;
+  outline: none;
+  padding: 1rem 1rem 4rem;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 35rem;
+
+  @media (max-width: $screen-xsm-max) {
+    max-width: 75vw;
+  }
+
+  h1 {
+    color: $dark-blue-color;
+    font-size: 2.23em;
+    max-width: 22rem;
+    text-align: center;
+  }
+
+  .close-button {
+    align-self: flex-end;
+    background-image: url('../components/App/img/x-dark.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 3.2rem;
+    width: 1.8rem;
+  }
+
+  .connect-button {
+    @extend %flex-centered;
+
+    border-color: $dark-blue-color;
+    color: $dark-blue-color;
+    font-weight: 400;
+    height: 3.9rem;
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    width: 17rem;
+
+    .twitter-icon {
+      height: 1.39rem;
+      margin-right: 1rem;
+      width: 1.67rem;
+    }
+
+    .facebook-icon {
+      height: 1.51rem;
+      margin-right: 1rem;
+      width: .85rem;
+    }
+  }
+
+  .divider-line {
+    background-color: $dark-blue-color;
+    height: .2rem;
+    margin: 1.5rem 0;
+    width: 5rem;
+  }
+}

@@ -1,0 +1,264 @@
+$greenlit-green-color: rgba(0, 222, 83, .4);
+$dark-blue-fade: rgba($lighter-black, .65);
+$divider-line-color: #abb1bf;
+$arena-width: 21rem;
+
+%arena-wrap-container {
+  @extend %flex-centered;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.arena-hub-bg {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.main-centered {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 155rem;
+  padding: 2rem;
+}
+
+.mobile-arena-tooltip {
+  display: none;
+  height: .1rem;
+
+  @media (max-width: $screen-sm-max) {
+    display: flex;
+  }
+}
+
+.darkened-bg {
+  background-image: linear-gradient(to bottom, $dark-blue-fade, $lighter-black);
+}
+
+.arena-boxes-container {
+  @extend %arena-wrap-container;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 155rem;
+
+  &.featured-boxes {
+    justify-content: space-around;
+
+    .arena-container {
+      margin: 1.5rem 2rem;
+      width: 19rem;
+
+      @media (max-width: $screen-xsm-max) {
+        margin: .5rem;
+        width: 15rem;
+      }
+    }
+
+    @media (max-width: $screen-md-max) {
+      justify-content: flex-start;
+    }
+
+    @media (max-width: $screen-xsm-max) {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: $screen-xsm-max) {
+    justify-content: center;
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  .arena-container {
+    @extend %flex-column;
+    box-shadow: 3px 5px 5px $black-color;
+    margin: 1.5rem 3rem;
+    width: 25rem;
+
+    @media (max-width: $screen-sm-max) {
+      margin-left: .5em;
+      margin-right: .5em;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      margin: 1.5rem;
+      width: 19rem;
+    }
+
+    @media (max-width: $screen-xsm-max) {
+      margin: .5rem;
+      width: 15rem;
+    }
+  }
+}
+
+.featured-hubs {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $screen-md-max) {
+    display: block;
+  }
+
+  @media (max-width: $screen-sm-max) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    padding: 0;
+  }
+}
+
+.arena-cover {
+  background-image: url('../components/Home/ArenaHub/img/arena-ph.png');
+  background-size: cover;
+  height: 16rem;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.arena-gradient {
+  background-image: linear-gradient(to top, $transparent-color, $black-color);
+  height: 11.5rem;
+  width: 100%;
+}
+
+.gradient-greenlit {
+  background-image: linear-gradient(to top, $transparent-color, $greenlit-green-color);
+}
+
+.arena-name {
+  @extend %flex-centered;
+  background-color: $soft-grey-color;
+  font-size: 1.68em;
+  font-weight: 500;
+  height: 2.9rem;
+  justify-content: center;
+  width: 100%;
+
+  label {
+    color: $dark-blue-color;
+    display: block;
+    line-height: normal;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+}
+
+.arena-divider-line {
+  background-color: $divider-line-color;
+  height: .1rem;
+  width: 100%;
+}
+
+.arena-counter {
+  background-color: $grey-color;
+  display: flex;
+  height: 7.3rem;
+
+
+  &.arena-page {
+    background: none;
+
+    @media (max-width: $screen-sm-min) {
+      margin: 0 auto 2rem;
+      width: 65%;
+    }
+
+    @media (max-width: $screen-xsm-max) {
+      height: 6.3rem;
+      width: 100%;
+    }
+  }
+}
+
+.counter-field {
+  @extend %flex-column-centered;
+  flex: 1;
+
+  &.small-space {
+    margin-right: 2rem;
+
+    @media (max-width: $screen-sm-min) {
+      &:last-of-type { margin-right: 0; }
+    }
+  }
+}
+
+.counter-value {
+  color: $dark-blue-color;
+  font-size: 3.9em;
+  font-weight: lighter;
+  margin-bottom: .5rem;
+
+  &.arena-page {
+    color: $soft-grey-color;
+    font-size: 5em;
+  }
+
+  @media (max-width: $screen-xsm-max) {
+    font-size: 3.2em;
+  }
+}
+
+.counter-label {
+  color: $dark-blue-color;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+
+  &.arena-page {
+    color: $soft-grey-color;
+    font-size: 1.4em;
+    font-weight: 500;
+  }
+
+  @media (max-width: $screen-xsm-max) {
+    font-size: .9em;
+  }
+}
+
+.arena-hub-header {
+  display: flex;
+  flex-direction: column;
+  margin: 0 3rem;
+  width: 100%;
+
+  .filter-sort-container {
+    align-self: flex-end;
+  }
+}
+
+.header-title {
+  color: $white-color;
+  font-size: 1.5em;
+  font-weight: bold;
+  overflow: hidden;
+  padding: 1rem 0;
+  width: 100%;
+
+  a {
+    color: $white-color;
+    font-size: .8em;
+    font-weight: 100;
+    margin-left: 1rem;
+    text-decoration: underline;
+  }
+
+  &::after {
+    background-color: $white-color;
+    content: '';
+    display: inline-block;
+    height: 1px;
+    margin: 0 -100% 0 1rem;
+    padding-right: 3rem;
+    vertical-align: middle;
+    width: 100%;
+  }
+}

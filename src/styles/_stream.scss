@@ -1,0 +1,10 @@
+.mystream-container {
+  @extend %flex-column-centered;
+  margin: 0 auto;
+  max-width: 90rem;
+  padding-top: 10rem;
+
+  .search-bar-container {
+    margin: 4rem 0;
+  }
+}

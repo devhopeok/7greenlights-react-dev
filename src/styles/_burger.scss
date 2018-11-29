@@ -1,0 +1,84 @@
+$buttons-height: 2.1rem;
+
+.bm-burger-button {
+  display: none;
+  height: $buttons-height;
+  position: absolute;
+  right: 2rem;
+  top: 3.85rem;
+  width: 2.5rem;
+
+  @media (max-width: $screen-sm-max) { display: block; }
+}
+
+.notification-burger {
+  display: none;
+  height: $buttons-height;
+  position: absolute;
+  right: 4rem;
+  top: 1.5rem;
+
+  @media (max-width: $screen-sm-max) { display: block; }
+}
+
+.bm-burger-bars {
+  background: $white-color;
+}
+
+.bm-cross-button {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.bm-cross {
+  background: $white-color;
+  height: 2rem;
+  width: 2rem;
+}
+
+.bm-menu {
+  background: $dark-blue-color;
+  font-size: 1.15em;
+}
+
+.bm-item-list {
+  background-color: rgba($white-color, .03);
+  color: $white-color;
+
+  .user-container {
+    @extend %flex-centered;
+    background: $dark-blue-color;
+    font-weight: bold;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+    padding: 1.5rem 2.5rem;
+
+    .profile-picture {
+      @include min-sized-picture(7rem, 7rem);
+      border-radius: 3.5rem;
+      margin-right: 2rem;
+    }
+  }
+
+  .links {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2.5rem;
+  }
+}
+
+.menu-item {
+  font-size: 1.8rem;
+  font-weight: lighter;
+  padding: 1rem 0;
+
+  &.logout {
+    margin-top: 3rem;
+  }
+}
+
+.bm-overlay {
+  background: rgba($black-color, .5);
+  z-index: 200;
+}

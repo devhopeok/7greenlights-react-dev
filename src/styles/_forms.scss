@@ -1,0 +1,106 @@
+input,
+label,
+select,
+button,
+textarea
+ {
+  background: none;
+  border: 0;
+  color: $soft-grey-color;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  vertical-align: middle;
+  white-space: normal;
+ }
+
+button {
+  background: none;
+  border: 0;
+  font-weight: 300;
+  letter-spacing: .5px;
+  padding: 0;
+}
+
+input {
+  width: 100%;
+}
+
+textarea,
+input {
+  outline: none;
+}
+
+.form-container {
+  @extend %flex-column;
+  margin: 2rem 0;
+}
+
+.field-container {
+  @extend %flex-column;
+  padding: 1rem;
+}
+
+.field-title-container {
+  display: flex;
+  flex: 1 0 auto;
+
+  > * + * {
+    margin-left: .5rem;
+  }
+}
+
+.field-error {
+  font-size: 1.2em;
+  padding-top: .3rem;
+}
+
+.field-title {
+  font-size: 1.5em;
+}
+
+.field-text {
+  font-size: 1.5em;
+  padding: .8rem;
+}
+
+.field-bottom-line {
+  background-color: $soft-grey-color;
+  height: .1rem;
+  opacity: .5;
+}
+
+%button {
+  align-self: center;
+  background-color: $grey-color;
+  color: $black-color;
+  font-size: 1.5em;
+  font-weight: 500;
+  margin: 2rem 0;
+  min-height: 3rem;
+  text-align: center;
+  width: 11rem;
+}
+
+.form-button {
+  @extend %button;
+
+  &.disabled {
+    opacity: .2;
+  }
+}
+
+.dark-button {
+  @extend %button;
+  background-color: $dark-blue-color;
+  color: $soft-grey-color;
+}
+
+.dark-background {
+  background-color: $dark-blue-color;
+}
+
+.dark-color {
+  color: $dark-blue-color;
+}

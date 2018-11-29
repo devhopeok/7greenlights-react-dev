@@ -1,0 +1,128 @@
+// scss-lint:disable VendorPrefix ColorVariable DuplicateProperty
+
+$default-start-color: #3c3c3c;
+$default-end-color: #999;
+
+@mixin background-gradient($start-color: $default-start-color , $end-color: $default-end-color) {
+  background-color: $start-color;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($start-color), to($end-color));
+  background-image: -webkit-linear-gradient(top, $start-color, $end-color);
+  background-image: -moz-linear-gradient(top, $start-color, $end-color);
+  background-image: -ms-linear-gradient(top, $start-color, $end-color);
+  background-image: -o-linear-gradient(top, $start-color, $end-color);
+  background-image: linear-gradient(top, $start-color, $end-color);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$start-color}', endColorStr='#{$end-color}');
+}
+
+
+@mixin horizontal-gradient($start-color, $end-color) {
+  background: $start-color;
+  background: -moz-linear-gradient(left, $start-color 0%, $end-color 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, $start-color), color-stop(100%, $end-color));
+  background: -webkit-linear-gradient(left, $start-color 0%, $end-color 100%);
+  background: -o-linear-gradient(left, $start-color 0%, $end-color 100%);
+  background: -ms-linear-gradient(left, $start-color 0%, $end-color 100%);
+  background: linear-gradient(to right, $start-color 0%, $end-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start-color}', endColorstr='#{$end-color}', GradientType=1 );
+}
+
+// Created using: http://www.cssmatic.com/es/gradient-generator
+@mixin transparent-middle-gradient($top-color, $bottom-color) {
+  background: $top-color;
+  background: -moz-linear-gradient(top, $top-color 0%, $transparent-color 20%, $transparent-color 50%, $bottom-color 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, $top-color), color-stop(20%, $transparent-color), color-stop(50%, $transparent-color), color-stop(100%, $bottom-color));
+  background: -webkit-linear-gradient(top, $top-color 0%, $transparent-color 20%, $transparent-color 50%, $bottom-color 100%);
+  background: -o-linear-gradient(top, $top-color 0%, $transparent-color 20%, $transparent-color 50%, $bottom-color 100%);
+  background: -ms-linear-gradient(top, $top-color 0%, $transparent-color 20%, $transparent-color 50%, $bottom-color 100%);
+  background: linear-gradient(to bottom, $top-color 0%, $transparent-color 20%, $transparent-color 50%, $bottom-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$top-color}', endColorstr='#{$bottom-color}', GradientType=0);
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &::-moz-placeholder {@content};
+  &::-moz-placeholder {@content};
+  &:-ms-input-placeholder {@content};
+}
+
+// Using this mixin with nested calc since Firefox doesn't support it
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -o-calc(#{$expression});
+}
+
+@mixin tooltip-to-left($tooltip-width, $tooltip-height, $offset: 0%) {
+  @include calc(top, "(50% - (#{$tooltip-height} / 2))");
+  right: calc(100% + 24px);
+  height: $tooltip-height;
+  width: $tooltip-width;
+
+  &::after {
+    border-color: transparent $tooltip-grey;
+    border-width: 7px 0 7px 24px;
+    right: -23px;
+    top: 40%;
+  }
+}
+
+@mixin tooltip-to-right($tooltip-height, $offset: 0%) {
+  @include calc(top, "(50% - ((#{$tooltip-height} / 2) + #{$offset} ))");
+  left: calc(100% + 24px);
+  height: $tooltip-height;
+
+  &::after {
+    border-color: transparent $tooltip-grey;
+    border-width: 7px 24px 7px 0;
+    left: -23px;
+    top: 40%;
+  }
+}
+
+@mixin tooltip-to-top($tooltip-width, $tooltip-height, $offset: 0%) {
+  @include calc(left, "(50% - ((#{$tooltip-width} / 2) + #{$offset}))");
+  top: calc(-#{$tooltip-height} - 24px);
+  height: $tooltip-height;
+  width: $tooltip-width;
+
+  &::after {
+    border-color: $tooltip-grey transparent;
+    border-width: 24px 7px 0;
+    bottom: -23px;
+    left: 118px;
+  }
+}
+
+@mixin tooltip-to-bottom($tooltip-width, $tooltip-height, $offset: 0%) {
+  @include calc(left, "(50% - ((#{$tooltip-width} / 2) + #{$offset}))");
+  bottom: calc(-#{$tooltip-height} - 24px);
+  right: initial;
+  top: initial;
+  height: $tooltip-height;
+  width: $tooltip-width;
+
+  &::after {
+    border-color: $tooltip-grey transparent;
+    border-width: 0 7px 24px;
+    left: 48%;
+    right: initial;
+    top: -23px;
+  }
+}
+
+@mixin min-sized-picture($height, $width) {
+  height: $height;
+  min-height: $height;
+  width: $width;
+  min-width: $width;
+  object-fit: cover;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}

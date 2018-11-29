@@ -1,0 +1,123 @@
+.top-bar {
+  @extend %flex-centered;
+  align-items: flex-start;
+  background-color: $transparent-color;
+  height: $top-bar-height;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: absolute;
+  top: 0;
+  width: calc(100% - 4rem);
+  z-index: 100;
+}
+
+.right-box {
+  margin-top: 2.3rem;
+
+  .sign-in-btn {
+    line-height: 1.5;
+  }
+}
+
+.left-box {
+  @extend %flex-centered;
+  align-items: flex-end;
+
+  .main-logo {
+    margin: 2rem 1rem 0 0;
+    width: 18.7rem;
+  }
+}
+
+.user-box {
+  align-items: center;
+  display: flex;
+
+  a {
+    color: $white-color;
+    cursor: pointer;
+    font-size: 1.8em;
+    font-weight: 300;
+    margin: 0 1.5rem;
+
+    @media (max-width: $screen-lg-min) { margin: 0 1rem; }
+
+    &.notification-container {
+      margin: 0;
+    }
+  }
+
+  button { font-size: 1.6em; }
+
+  .has-new {
+    border: solid $white-color 2px;
+    border-radius: 2rem;
+    height: 4rem;
+    width: 4rem;
+
+    img {
+      margin-right: .5rem;
+    }
+  }
+
+  .triangle-icon {
+    cursor: pointer;
+    height: 9px;
+    margin: .2rem 0 0 .7rem;
+  }
+
+  .notification-icon {
+    cursor: pointer;
+    margin: 0 1.5rem;
+    position: relative;
+
+    @media (max-width: $screen-lg-min) { margin: 0 1rem; }
+  }
+
+  .divider-line {
+    background-color: $white-color;
+    height: 13px;
+    margin: 0 1.5rem 0 3rem;
+    width: 2px;
+
+    @media (max-width: $screen-md-max) { margin-right: 1rem; }
+  }
+
+  .standard-label {
+    font-size: 1.8em;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    flex-direction: column;
+  }
+}
+
+.user-dropdown {
+  background-color: $soft-grey-color;
+  padding: 0;
+  position: absolute;
+  right: 2.5rem;
+  top: 6.5rem;
+  width: 15rem;
+
+  button {
+    color: $dark-blue-color;
+    font-size: 1.6em;
+    font-weight: normal;
+    padding: 1rem 2rem;
+  }
+}
+
+.user-links {
+  align-items: center;
+  display: flex;
+
+  @media (max-width: $screen-sm-max) { display: none; }
+
+  .username-link {
+    font-weight: 500;
+    margin: 0 0 0 1.5rem;
+
+    @media (max-width: $screen-lg-min) { margin-left: 1rem; }
+  }
+}

@@ -1,0 +1,209 @@
+// This class should be assigned to Tooltip container tags
+.has-tooltip {
+  position: relative;
+}
+
+// scss-lint:disable VendorPrefix
+.tooltip {
+  @extend %flex-column-centered;
+  background: $tooltip-grey;
+  -moz-border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px 0 $half-black;
+  box-sizing: border-box;
+  color: $black-color;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  position: absolute;
+  width: 25rem;
+  z-index: 200;
+
+  &::after {
+    border-style: solid;
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    z-index: 1;
+  }
+
+  .tooltip-text {
+    font-size: 1.4rem;
+    font-weight: normal;
+  }
+
+  .dark-button {
+    font-size: 1.4rem;
+    margin: 0 auto;
+  }
+
+  &.home-blast {
+    $h: 11rem;
+    $w: 33rem;
+    @include tooltip-to-left($w, $h);
+    top: 0;
+
+    &::after {
+      top: 10%;
+    }
+
+    @media (max-width: $screen-md-max) {
+      $w: 50vw;
+      @include tooltip-to-bottom($w, $h);
+    }
+
+    @media (max-width: $screen-xs-max) {
+      $w: 80vw;
+    }
+  }
+
+  &.home-arena {
+    $w: 33rem;
+    $h: 11rem;
+    @include tooltip-to-bottom($w, $h);
+  }
+
+  &.home-greenlight {
+    height: 11rem;
+    left: 0;
+    top: 6rem;
+    width: 33rem;
+
+    @media (max-width: $screen-xs-max) {
+      height: 13rem;
+      width: 70vw;
+    }
+
+    &::after {
+      border-color: $tooltip-grey transparent;
+      border-width: 0 7px 24px;
+      left: 48%;
+      right: initial;
+      top: -23px;
+    }
+  }
+
+  &.mymedia-upload {
+    $w: 25rem;
+    $h: 15rem;
+    @include tooltip-to-bottom($w, $h);
+
+    @media (max-width: $screen-xs-max) {
+      left: -75%;
+    }
+  }
+
+  &.mymedia-external-links {
+    $w: 25rem;
+    $h: 13rem;
+    @include tooltip-to-bottom($w, $h);
+  }
+
+  &.mymedia-blast {
+    $w: 25rem;
+    $h: 13rem;
+    @include tooltip-to-bottom($w, $h, 30%);
+
+    @media (max-width: $screen-xs-max) {
+      left: 10%;
+    }
+  }
+
+  &.media-notes {
+    $h: 20rem;
+    $w: 25rem;
+    @include tooltip-to-top($w, $h, -40%);
+
+    @media (max-width: $screen-md-max) {
+      left: initial;
+      right: 0;
+    }
+  }
+
+  &.notes-greenlight {
+    $h: 17rem;
+    $w: 28rem;
+    @include tooltip-to-bottom($w, $h, 30%);
+    left: initial;
+    right: 0;
+    top: 6rem;
+
+    @media (max-width: $screen-md-max) {
+      height: 18rem;
+      width: 25rem;
+    }
+
+    &::after {
+      left: 90%;
+    }
+  }
+
+  &.mystream {
+    $w: 25rem;
+    $h: 15rem;
+    @include tooltip-to-bottom($w, $h);
+  }
+
+  &.mystream-filters {
+    $h: 10rem;
+    @include tooltip-to-right($h, -50%);
+
+    @media (max-width: $screen-md-max) {
+      $w: 25rem;
+      @include tooltip-to-bottom($w, $h);
+    }
+  }
+
+  &.myprofile {
+    $w: 25rem;
+    $h: 10rem;
+    @include tooltip-to-bottom($w, $h);
+  }
+
+  &.arena-time {
+    $h: 10rem;
+    @include tooltip-to-right($h);
+
+    @media (max-width: $screen-xs-max) {
+      $w: 25rem;
+      @include tooltip-to-bottom($w, $h);
+    }
+  }
+
+  &.arena-post {
+    $h: 10rem;
+    @include tooltip-to-right($h);
+
+    @media (max-width: $screen-xsm-max) {
+      $w: 25rem;
+      @include tooltip-to-bottom($w, $h);
+      left: 0;
+    }
+  }
+
+  &.arena-sponsoring {
+    height: 18rem;
+    right: 5rem;
+    transform: translate(0%, -200%);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &.featured-notes-tt {
+    $w: 25rem;
+    $h: 17rem;
+    @include tooltip-to-bottom($w, $h);
+    height: $h;
+    width: $w;
+
+    &::after {
+      border-color: $tooltip-grey transparent;
+      border-width: 0 7px 24px;
+      left: 170px;
+      top: -23px;
+    }
+  }
+}

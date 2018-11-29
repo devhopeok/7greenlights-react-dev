@@ -1,0 +1,27 @@
+.greenlight-container {
+  @extend %flex-centered;
+  justify-content: flex-end;
+  padding: 1rem 1rem 0;
+
+  &.no-padding {
+    padding: 0;
+  }
+}
+
+.greenlight-counter {
+  font-size: 1.35em;
+  margin-left: .5rem;
+
+  &.dark {
+    color: $dark-blue-color;
+  }
+}
+
+.lightbulb {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 29px;
+  justify-content: center;
+  width: 23px;
+}

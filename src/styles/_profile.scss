@@ -1,0 +1,379 @@
+.profile-cover-container {
+  height: 30rem;
+
+  @media (max-width: $screen-lg-min) { height: 35rem; }
+  @media (max-width: $screen-md-min) { height: 55rem; }
+}
+
+.greenlit-gradient {
+  @include background-gradient($top-gradient-greenlit, $transparent-color);
+  background-color: $bg-color;
+  height: 100%;
+  mix-blend-mode: normal;
+  width: 100%;
+}
+
+.profile-cover {
+  @extend %flex-centered;
+  align-items: center;
+  box-sizing: border-box;
+  height: 30rem;
+  padding: 12rem 5rem 5rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @media (max-width: $screen-lg-min) { align-items: flex-start; }
+
+  @media (max-width: $screen-md-min) {
+    display: block;
+    padding: 10rem 2rem 2rem;
+  }
+
+  .divider-line {
+    background-color: $post-divider-bg;
+    height: 12.5rem;
+    margin: 0 2rem;
+    width: .1rem;
+
+    @media (max-width: $screen-md-min) { display: none; }
+  }
+}
+
+.profile-basics {
+  @extend %flex-centered;
+  color: $soft-grey-color;
+  justify-content: flex-start;
+  width: 40%;
+
+  @media (max-width: $screen-lg-min) { width: 50%; }
+  @media (max-width: $screen-md-min) { width: 100%; }
+
+  .profile-picture {
+    @include min-sized-picture(12.5rem, 12.5rem);
+    border-radius: 6.25rem;
+  }
+
+  .picture-hover {
+    @include min-sized-picture(12.5rem, 12.5rem);
+    background-color: rgba($black-color, .45);
+    background-image: url('../components/Profile/img/camera.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 3.5rem 2.8rem;
+    border-radius: 6.25rem;
+    cursor: pointer;
+    display: block;
+    margin-left: -12.5rem;
+  }
+
+  .basic-info {
+    @extend %flex-column;
+    margin-left: 2rem;
+
+    h1 {
+      color: $white-color;
+      font-size: 2.5em;
+    }
+  }
+
+  .last-blast {
+    @extend %flex-centered;
+    justify-content: flex-start;
+    margin-top: 1rem;
+
+    label {
+      color: $blast-green-color;
+      font-size: 2em;
+      font-weight: 100;
+      margin-left: 1rem;
+
+      @media (max-width: $screen-lg-min) { font-size: 1.8em; }
+    }
+  }
+
+  .links-list {
+    @extend %flex-centered;
+
+    img {
+      height: 3rem;
+      margin-right: 1rem;
+      width: 3rem;
+    }
+  }
+}
+
+.profile-stats-container {
+  @extend %flex-centered;
+  flex: 1;
+  justify-content: flex-end;
+
+  @media (max-width: $screen-lg-min) {
+    flex-wrap: wrap;
+    max-width: 50%;
+  }
+
+  @media (max-width: $screen-md-min) {
+    margin-top: 5rem;
+    max-width: 100%;
+  }
+
+  .profile-stats {
+    @extend %flex-centered;
+    align-items: flex-end;
+    flex: 1;
+    justify-content: space-between;
+    max-width: 80rem;
+
+    @media (max-width: $screen-lg-min) {
+      flex-wrap: wrap;
+      justify-content: inherit;
+    }
+
+    @media (max-width: $screen-md-min) {
+      justify-content: space-between;
+      max-width: 100%;
+    }
+  }
+
+  .profile-stat {
+    @extend %flex-column-centered;
+    margin-left: 2rem;
+    max-width: 8rem;
+
+    @media (max-width: $screen-lg-min) { margin: 2rem 2rem 0; }
+    @media (max-width: $screen-md-min) { max-width: 7rem; }
+
+    .stat-title {
+      font-size: 1.5em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .stat {
+      font-size: 3.5em;
+      font-weight: 100;
+    }
+  }
+}
+
+.profile-content-container {
+  @extend %flex-column-centered;
+  margin: 0 auto;
+  max-width: 90rem;
+  padding-top: 3rem;
+
+  @media (max-width: $screen-md-min) {
+    max-width: calc(100% - 4rem);
+    padding: 3rem 2rem;
+  }
+
+  .divider-line {
+    background-color: $white-color;
+    height: .1rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+}
+
+.profile-tab-headers {
+  @extend %flex-centered;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.profile-tab-header {
+  max-width: 25%;
+
+  h2 {
+    border-bottom: .2rem solid $transparent-color;
+    color: $white-color;
+    font-size: 2em;
+    font-weight: 100;
+    padding-bottom: .3rem;
+
+    &.selected {
+      border-color: $white-color;
+      font-weight: 600;
+    }
+  }
+}
+
+.tab {
+  @extend %flex-column;
+  color: $white-color;
+  width: 100%;
+
+  .coming-soon {
+    font-size: 2.5em;
+    font-weight: 400;
+    margin: 4rem 0 2rem;
+  }
+
+  .edit-pencil {
+    background-image: url('../components/Media/img/pencil-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 1.9rem;
+    width: 1.9rem;
+  }
+}
+
+.bio {
+
+  .title-container {
+    @extend %flex-centered;
+    justify-content: space-between;
+    margin: 4rem 0 2rem;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 1.6em;
+    font-weight: 100;
+    line-height: normal;
+  }
+
+  input,
+  textarea {
+    background-color: $field-bg-color;
+    box-sizing: border-box;
+    color: $black-color;
+    font-size: 1.5em;
+    min-height: 19rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .form {
+    .divider-line {
+      margin-top: 1rem;
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  button {
+    height: 3rem;
+    margin: 1rem 0 0 2rem;
+    text-align: center;
+  }
+
+  .divider-line {
+    margin: 6rem 0 0;
+
+    &.soft {
+      opacity: .3;
+    }
+  }
+
+  .placeholder {
+    color: $field-bg-grey;
+    font-size: 1.5em;
+    margin-left: 2rem;
+  }
+}
+
+.username-form {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+
+  h1 {
+    margin-right: 2rem;
+  }
+
+  .pencil-icon {
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+
+  .tick-icon {
+    height: 1.4rem;
+    margin-left: 1rem;
+    width: 1.9rem;
+  }
+
+  .cancel-icon {
+    height: 1.8rem;
+    margin-left: 1rem;
+    width: 1.4rem;
+  }
+
+  .username-field {
+    @extend %flex-column;
+    flex: 1;
+
+    .divider-line {
+      background-color: $white-color;
+      height: 1px;
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  input {
+    color: $white-color;
+    display: flex;
+    flex: 1;
+    font-size: 2.5em;
+  }
+}
+
+.greenlit-user {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  height: 15rem;
+
+  .profile-pic {
+    @include min-sized-picture(4.9rem, 4.9rem);
+    border-radius: 2.45rem;
+  }
+
+  .last-blast {
+    align-items: center;
+    display: flex;
+    margin-top: 1rem;
+
+    img {
+      height: 1.5rem;
+      width: 2.13rem;
+    }
+
+    label {
+      color: $blast-green-color;
+      font-size: 1.75rem;
+      font-weight: 100;
+      margin-left: 1rem;
+    }
+  }
+
+  .profile-data {
+    @extend %flex-column;
+    flex: 1;
+    margin-left: 2rem;
+
+    a {
+      font-size: 1.88em;
+    }
+  }
+}
+
+.greenlit-user-container {
+  .divider-line {
+    margin-top: 0;
+
+    &.soft {
+      opacity: .3;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.blast-box {
+  @extend %flex-centered;
+  position: relative;
+  width: 40rem;
+
+  @media (max-width: $screen-md-max) { width: 25.5rem; }
+
+  .blast-form {
+    width: 100%;
+
+    .field-container {
+      padding: 0;
+    }
+  }
+
+  .field-container {
+    width: 100%;
+
+    .error {
+      font-size: 1.2rem;
+      height: 2rem;
+    }
+  }
+}
+
+.field-bottom-line.blast {
+  background-color: $blast-green-color;
+}
+
+.blast-input {
+  border-bottom: 1px solid $blast-green-color;
+  color: $blast-green-color;
+  display: block;
+  font-style: italic;
+  margin: 0 .8rem;
+  overflow: hidden;
+  padding: .8rem 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include placeholder {
+    color: $blast-green-color;
+    text-overflow: ellipsis;
+  }
+}
+
+.media-blast {
+  @extend %flex-column;
+  margin-top: 2rem;
+  width: 100%;
+
+  @media (max-width: $screen-sm-min) {
+    width: 90%;
+  }
+
+  .blast-form {
+    align-items: center;
+    display: flex;
+  }
+
+  .blast-box {
+    display: flex;
+    justify-content: flex-start;
+
+    h2 {
+      color: $blast-green-color;
+      font-size: 1.9em;
+      font-weight: 100;
+      margin-left: 1rem;
+    }
+  }
+
+  .field-container {
+    flex: 1;
+    padding: 0 1rem 1rem 0;
+
+    input {
+      background-color: $translucid-blast-bg;
+      flex: 1;
+      height: 2.3rem;
+      width: auto;
+    }
+  }
+
+  .transparent-button {
+    border-color: $blast-green-color;
+    color: $blast-green-color;
+    height: 3.3rem;
+  }
+}

@@ -1,0 +1,505 @@
+.mymedia-container {
+  @extend %flex-column-centered;
+
+  margin: 0 auto;
+  max-width: 90rem;
+  padding-top: 10rem;
+
+  .blast-box {
+    padding: 1rem 0;
+  }
+}
+
+.title-container {
+  @extend %flex-centered;
+
+  h1 {
+    color: $white-color;
+    font-size: 2.7em;
+  }
+
+  .divider-line {
+    background-color: $white-color;
+    height: 3rem;
+    margin: 0 2rem;
+    width: .2rem;
+  }
+
+  button {
+    width: 14rem;
+  }
+}
+
+.edit-media {
+  @extend %flex-column;
+  background-color: $gradient-start;
+  box-shadow: 0 .2rem .4rem 0 $half-black;
+  padding: 1.5rem 2rem;
+  width: calc(100% - 4rem);
+
+  h1 {
+    color: $soft-grey-color;
+    font-size: 1.9em;
+    margin: 0;
+  }
+
+  .line {
+    align-self: center;
+    background-color: $soft-grey-color;
+    height: 1px;
+    margin: 2rem 0;
+    width: 100%;
+  }
+}
+
+.edit-media-buttons {
+  @extend %flex-centered;
+  justify-content: space-between;
+
+  button {
+    margin: 0;
+  }
+
+  .cancel-button {
+    color: $soft-grey-color;
+    font-size: 1.5em;
+    font-weight: 100;
+    text-decoration: underline;
+  }
+
+  .confirm-button {
+    width: 14rem;
+  }
+}
+
+.media-form {
+  margin-bottom: 0;
+
+  label {
+    font-size: 1.5em;
+    font-weight: 100;
+
+    &.where-label {
+      margin-top: 1rem;
+    }
+  }
+
+  input {
+    $left-padding: 1rem;
+
+    background-color: $field-bg-color;
+    color: $black-color;
+    font-size: 1.4em;
+    font-weight: normal;
+    height: 2.6rem;
+    margin-top: .5rem;
+    padding-left: $left-padding;
+    width: calc(100% - #{$left-padding});
+  }
+
+  .media-field {
+    margin: 1rem 0;
+
+    .edit-media-link {
+      display: block;
+      font-weight: 400;
+      margin: 1rem 0 2rem;
+    }
+  }
+
+  .fields-container {
+    padding-right: 10rem;
+  }
+}
+
+.add-link-container {
+  display: flex;
+  margin-top: .5rem;
+
+  button {
+    margin-left: 1rem;
+  }
+
+  input {
+    flex: 1;
+    margin-top: 0;
+  }
+}
+
+.links-list {
+  @extend %flex-column;
+  margin-top: 1rem;
+
+  .link {
+    align-items: center;
+    display: flex;
+    margin-top: 1rem;
+
+    input {
+      background: none;
+      color: $soft-grey-color;
+      display: flex;
+      flex: 1;
+      font-size: 1.5em;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    button {
+      background: no-repeat center;
+      font-size: 1.5rem;
+      height: 1.8rem;
+      width: 1.8rem;
+    }
+  }
+}
+
+.embedder {
+  margin-bottom: 2rem;
+  padding: 0 0 1rem;
+
+  @media (max-width: $screen-md-max) {
+    > div,
+    > iframe {
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+}
+
+.media-list-container {
+  align-items: flex-start;
+  display: flex;
+  width: 100%;
+
+  @media (max-width: $screen-md-max) {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.filter-sort-option {
+  align-items: center;
+  display: flex;
+  margin: 1rem 0;
+
+  img {
+    margin-right: 1rem;
+  }
+
+  label {
+    font-size: 1.58em;
+
+    &.active {
+      font-weight: 400;
+    }
+  }
+
+  &.pop {
+    margin-top: 2rem;
+  }
+
+  .pop-icon {
+    height: 2.7rem;
+  }
+}
+
+.media-list {
+  max-width: 74rem;
+  width: 100%;
+
+  @media (max-width: $screen-md-max) {
+    margin-left: 2rem;
+    max-width: 100%;
+    padding-bottom: 4rem;
+    width: calc(100% - 4rem);
+  }
+
+  .no-media {
+    color: $white-color;
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.media-box {
+  @extend %flex-column;
+  @include transition(background-color 1s linear);
+  background-repeat: no-repeat;
+  background-size: 100% 20%;
+  margin: 2rem 0;
+
+  &.highlighted {
+    background-color: $highlighted-media-color;
+  }
+}
+
+.media-top-bar {
+  @extend %flex-centered;
+  justify-content: space-between;
+}
+
+.media-controls {
+  @extend %flex-centered;
+  justify-content: flex-end;
+
+  .line {
+    background-color: $white-color;
+    height: 2rem;
+    margin: 0 1rem;
+    width: 1px;
+  }
+
+  .icon {
+    margin: 0 1rem;
+  }
+}
+
+.media-user-box {
+  display: flex;
+  margin: 2rem 0;
+
+  label,
+  a {
+    color: $soft-grey-color;
+    font-size: 1.5em;
+  }
+
+  .user-picture {
+    @include min-sized-picture(4rem, 4rem);
+    border-radius: 2rem;
+  }
+
+  .blast-container {
+    @extend %flex-centered;
+    justify-content: flex-start;
+    margin-top: .5rem;
+
+    label {
+      color: $blast-green-color;
+      font-size: 1.4em;
+      font-weight: 100;
+      margin-left: 1rem;
+    }
+  }
+
+  .blast-icon {
+    height: 1.2rem;
+    min-width: 1.8rem;
+  }
+
+  .user-info {
+    @extend %flex-column;
+    margin-left: 1rem;
+  }
+
+  .username-gl {
+    align-items: center;
+    display: flex;
+
+    .greenlight-container {
+      margin-left: .5rem;
+    }
+  }
+}
+
+.media-notes-box {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+
+  .pending-approval {
+    @extend %flex-centered;
+
+    img {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+
+    label {
+      color: $red-error-color;
+      font-size: 1.2em;
+      margin-left: .5rem;
+    }
+  }
+}
+
+.notes-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  width: 50rem;
+
+  .note-label {
+    color: $soft-grey-color;
+    font-size: 1.5em;
+    margin-right: 1rem;
+  }
+
+  .note {
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+    height: 5rem;
+    margin-right: 1rem;
+    width: 5rem;
+  }
+
+  .note-placeholder {
+    align-items: center;
+    border: $soft-grey-color .1rem dashed;
+    color: $soft-grey-color;
+    display: flex;
+    font-size: 3em;
+    height: 5rem;
+    justify-content: center;
+    margin-right: 1rem;
+    text-align: center;
+    width: 5rem;
+
+    label {
+      margin: 0 auto;
+    }
+  }
+
+  .all-notes-link {
+    color: $soft-grey-color;
+    font-size: 1.26em;
+    max-width: 5rem;
+    text-decoration: underline;
+  }
+}
+
+.media-links {
+  @extend %flex-centered;
+  justify-content: space-between;
+
+  label {
+    color: $soft-grey-color;
+    font-size: 1.5em;
+  }
+}
+
+.available-on {
+  @extend %flex-centered;
+
+  .link-icon {
+    height: 1.8rem;
+    margin-left: 1rem;
+    width: 1.8rem;
+  }
+}
+
+.report-share {
+  @extend %flex-centered;
+
+  button {
+    font-size: 1.26em;
+    margin-right: 1rem;
+    text-decoration: underline;
+  }
+}
+
+.report-modal {
+  @extend %flex-column-centered;
+  background-color: $soft-grey-color;
+  left: 50%;
+  outline: none;
+  padding: 1rem;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 35rem;
+
+  @media (max-width: $screen-xs-max) {
+    max-width: 75vw;
+  }
+
+  h1 {
+    color: $dark-blue-color;
+    font-size: 2.2rem;
+    max-width: 22rem;
+  }
+
+  .close-button {
+    align-self: flex-end;
+  }
+
+  .divider-line {
+    background-color: $dark-blue-color;
+    height: .2rem;
+    margin: 1.8rem 0;
+    width: 5.1rem;
+  }
+
+  .report-form {
+    @extend %flex-column;
+
+    @media (max-width: $screen-xs-max) {
+      max-width: 80%;
+    }
+
+    textarea {
+      align-self: center;
+      background-color: $white-color;
+      color: $dark-blue-color;
+      font-size: 1.5em;
+      height: 14rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      resize: none;
+      width: 29rem;
+
+      @media (max-width: $screen-xs-max) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.media-empty {
+  @extend %flex-column-centered;
+  margin-top: 5rem;
+  text-align: center;
+  width: 100%;
+
+  .icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+
+    &.mymedia {
+      background-image: url('../components/Media/img/empty-box.png');
+      height: 5.8rem;
+    }
+
+    &.mystream {
+      background-image: url('../components/Media/img/empty-video.png');
+      height: 4.5rem;
+    }
+
+    &.arenapage {
+      background-image: url('../components/Media/img/empty-arena.png');
+      height: 5.6rem;
+    }
+  }
+
+  .divider-line {
+    background-color: $soft-grey-color;
+    height: .3rem;
+    margin: 2rem 0;
+    opacity: .4;
+    width: 13.7rem;
+  }
+
+  label {
+    color: $soft-grey-color;
+    font-size: 2.2em;
+    line-height: 2.5rem;
+    max-width: 40rem;
+    opacity: .4;
+  }
+}

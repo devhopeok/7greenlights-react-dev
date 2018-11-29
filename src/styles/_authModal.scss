@@ -1,0 +1,128 @@
+$overlay-bg-color: rgba(21, 27, 38, .55);
+$loading-bg-color: rgba(21, 27, 38, .85);
+
+.auth-popup-overlay {
+  background-color: $overlay-bg-color;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 200;
+
+  &.loading {
+    background-color: $loading-bg-color;
+  }
+}
+
+// scss-lint:disable VendorPrefix
+.auth-popup {
+  background-color: $soft-grey-color;
+  left: 50%;
+  outline: none;
+  padding: 0;
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 35rem;
+
+
+  .modal-content-container {
+    @extend %flex-column-centered;
+    margin: 3rem 0;
+  }
+
+  .modal-title {
+    align-self: center;
+    color: $dark-blue-color;
+    font-size: 2.2em;
+    max-width: 220px;
+    text-align: center;
+  }
+
+  %auth-divider-line {
+    background-color: $dark-blue-color;
+    height: .2rem;
+    margin: 1.5rem 0 .5rem;
+  }
+
+  .title-divider-line {
+    @extend %auth-divider-line;
+    width: 5rem;
+  }
+
+  .lower-divider-line {
+    @extend %auth-divider-line;
+    height: .1rem;
+    width: 30rem;
+
+    @media (max-width: $screen-xsm-max) {
+      width: 24rem;
+    }
+  }
+
+  .form-container {
+    margin: 1rem auto 0;
+    width: 90%;
+  }
+
+  .form-container-password {
+    width: 60%;
+  }
+
+  input {
+    color: $dark-blue-color;
+  }
+
+  .bottom-text {
+    color: $dark-blue-color;
+    display: flex;
+    font-size: 1.5em;
+    justify-content: center;
+    margin-top: 1rem;
+
+    .suggestion {
+      margin: 1.5rem;
+    }
+  }
+
+  .bottom-link {
+    color: $dark-blue-color;
+    font-weight: bold;
+    margin: 0 .5rem;
+  }
+
+  .bottom-link:visited {
+    color: $dark-blue-color;
+  }
+
+  .signup-box .connect-button {
+    background-color: $transparent-color;
+    border: 1px solid $dark-blue-color;
+    color: $dark-blue-color;
+    font-size: 1.6em;
+    font-weight: normal;
+    margin: 2rem 0 0;
+    padding: 15px 20px;
+  }
+
+  .signup-box .instagram-connect-button {
+    margin: 2rem 0 1rem;
+  }
+
+  .close-button {
+    background-repeat: no-repeat;
+    height: 1.4rem;
+    margin-right: 1rem;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 1.1rem;
+  }
+
+  @media (max-width: $screen-xsm-max) {
+    width: 28rem;
+  }
+}
